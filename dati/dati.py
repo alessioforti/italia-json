@@ -57,8 +57,8 @@ province_json.write('[\n')
 for prov in province:
     provincia = ('  {'
             '"id": ' + str(int(prov[0])).strip() + ', '
-            '"nome": "' + prov[1] + '", '
-            '"regione": "' + prov[3] + '", '
+            '"nome": "' + prov[1].replace('Valle d\'Aosta/Vallée d\'Aoste', 'Aosta').replace('/Bozen', '') + '", '
+            '"regione": "' + prov[3].replace('/Vallée d\'Aoste', '').replace('/Südtirol', '') + '", '
             '"idRegione": ' + str(int(prov[4])) + ', '
             '"siglaProvincia": "' + prov[2] + '"},\n'
         )

@@ -91,13 +91,13 @@ for row in parsed_csv:
             row[0], #idRegione
             row[10], #regione
         ])
-print(regioni)
+
 regioni_json = open('../regioni.json', 'w', encoding='utf-8')
 regioni_json.write('[\n')
 for reg in regioni:
     regione = ('  {'
             '"id": ' + str(int(reg[0])).strip() + ', '
-            '"nome": "' + reg[1] + '"},\n'
+            '"nome": "' + reg[1].replace('/Vallée d\'Aoste', '').replace('/Südtirol', '') + '"},\n'
         )
     regioni_json.write(regione)
 regioni_json.write(']')

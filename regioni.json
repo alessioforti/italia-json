@@ -1,8 +1,8 @@
 [
   {"id": 1, "nome": "Piemonte"},
-  {"id": 2, "nome": "Valle d'Aosta/Vallée d'Aoste"},
+  {"id": 2, "nome": "Valle d'Aosta"},
   {"id": 3, "nome": "Lombardia"},
-  {"id": 4, "nome": "Trentino-Alto Adige/Südtirol"},
+  {"id": 4, "nome": "Trentino-Alto Adige"},
   {"id": 5, "nome": "Veneto"},
   {"id": 6, "nome": "Friuli-Venezia Giulia"},
   {"id": 7, "nome": "Liguria"},

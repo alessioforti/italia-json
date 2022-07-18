@@ -66,3 +66,39 @@ for prov in province:
 province_json.write(']')
 
 
+
+# Genera file Regioni
+dati_csv = open('Elenco-comuni-italiani.csv', encoding='iso-8859-1', newline='')
+parsed_csv = csv.reader(dati_csv, delimiter=';', quotechar='"')
+
+next(parsed_csv)
+first_row = next(parsed_csv)
+
+regioni = []
+regioni.append([
+    first_row[0], #idRegione
+    first_row[10], #regione
+    ])
+
+for row in parsed_csv:
+    ins = False
+    for i in range(0, len(regioni)):
+        if row[0] in regioni[i]:
+            ins = True
+            break
+    if not ins:
+        regioni.append([
+            row[0], #idRegione
+            row[10], #regione
+        ])
+print(regioni)
+regioni_json = open('../regioni.json', 'w', encoding='utf-8')
+regioni_json.write('[\n')
+for reg in regioni:
+    regione = ('  {'
+            '"id": ' + str(int(reg[0])).strip() + ', '
+            '"nome": "' + reg[1] + '"},\n'
+        )
+    regioni_json.write(regione)
+regioni_json.write(']')
+

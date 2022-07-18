@@ -11,9 +11,9 @@ for com in parsed_csv:
     comune = ('  {'
             '"id": ' + str(int(com[4])).strip() + ', '
             '"nome": "' + com[6] + '", '
-            '"regione": "' + com[10] + '", '
+            '"regione": "' + com[10].replace('/Vallée d\'Aoste', '').replace('/Südtirol', '') + '", '
             '"idRegione": ' + str(int(com[0])) + ', '
-            '"provincia": "' + com[11] + '", '
+            '"provincia": "' + com[11].replace('Valle d\'Aosta/Vallée d\'Aoste', 'Aosta').replace('/Bozen', '') + '", '
             '"siglaProvincia": "' + com[14] + '", '
             '"idProvincia": ' + str(int(com[1])) + '},\n'
         )
